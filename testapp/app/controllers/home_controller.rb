@@ -12,6 +12,6 @@ class HomeController < ApplicationController
   end
   private
   def get_html(component, data)
-    RestClient.get 'http://localhost:3000/', :params => {:module => component.to_json, :props => data.to_json}
+    RestClient.get ReactConfig.config[:react_server], :params => {:module => component.to_json, :props => data.to_json}
   end
 end
