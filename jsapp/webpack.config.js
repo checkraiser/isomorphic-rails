@@ -8,10 +8,13 @@ var config = {
     this.module.noParse.push(path);
   },
   context: __dirname ,
-  entry: "./src/client.js",
+  entry: {
+    home_index: "./src/Home/index",
+    home_about: "./src/Home/about"
+  },
   output: {
       path: __dirname + '../../testapp/vendor/assets/javascripts',
-      filename: "bundle.js"
+      filename: "[name].bundle.js"
   },
   module: {
     noParse: [],
